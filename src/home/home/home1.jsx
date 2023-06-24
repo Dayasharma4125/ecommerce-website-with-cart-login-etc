@@ -29,10 +29,11 @@ const Home = () => {
                                 setstate1(e)
                                 navigate(`/webapp1/product/${e.title}`)} 
                             }/>
-                            <div className="productprice" key={e.price}>${e.price}</div>
-                            <button className="addtocart" onClick={() => {
+                            <div className="productprice" key={e.price}>$ {e.price}</div>
+                            {/* <button className="addtocart" >add to cart</button> */}
+                            <button onClick={() => {
                                 dispatch({ type: ACTION.ADD, payload: { name: e.title, num: 1, data: e } })
-                            }} >add to cart</button>
+                            }} >Add to cart</button>
                         </div></>
                     )
                 })}
