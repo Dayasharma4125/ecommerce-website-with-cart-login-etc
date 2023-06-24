@@ -19,9 +19,9 @@ function App() {
       <datainfo.Provider value={{state1,setstate1}}>
         <Navbar />
         <Routes>
-          <Route path="/" element={<><Home /> </>} ></Route>
-          <Route path="/cart" element={<><Pureredux /> </>} ></Route>
-          <Route path="/product/:id" element={<><Productinfo /> </>} ></Route>
+          <Route path="/webapp1/" element={<><Home /> </>} ></Route>
+          <Route path="/webapp1/cart" element={<><Pureredux /> </>} ></Route>
+          <Route path="/webapp1/product/:id" element={<><Productinfo /> </>} ></Route>
         </Routes>
       </datainfo.Provider>
       </Dataf.Provider>
