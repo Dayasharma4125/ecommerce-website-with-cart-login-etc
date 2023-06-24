@@ -1,0 +1,111 @@
+.productinfo {
+  margin-top: 15px;
+  .productinfotitle {
+    color: white;
+    margin: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-weight: 800;
+  }
+  .productinfodiv {
+    border: 2px solid transparent;
+    img {
+      max-height: 60vh;
+      max-width: 50vw;
+      margin-left: 5%;
+      float: left;
+      border: 2px solid transparent;
+      border-radius: 5px;
+    }
+    .prductinfodiv2 {
+      margin-top: 2%;
+      float: right;
+      display: flex;
+      justify-content: start;
+      align-items: start;
+      flex-direction: column;
+      border: 2px solid transparent;
+      // div {
+      //   text-shadow: 0px 0px 2px 5px rgba(255, 255, 255, 0.5);
+      // }
+      .prductinfodiv2price {
+        font-size: 25px;
+        color: whitesmoke;
+        margin-left: 12%;
+      }
+      button {
+        border: 1px solid transparent;
+        margin-top: 25px;
+        margin-bottom: 55px;
+        background: none;
+        width: 80%;
+        color: antiquewhite;
+        span {
+          margin-top: 25px;
+          padding-bottom: 7px;
+          letter-spacing: 4px;
+          font-size: 14px;
+          padding-right: 15px;
+          text-align: start;
+          text-transform: uppercase;
+        }
+        svg {
+          background-color: white;
+          transform: translateX(-8px);
+          transition: all 0.3s ease;
+          color: transparent;
+        }
+        &:hover svg {
+          transform: translateX(0);
+        }
+        &:active svg {
+          transform: scale(0.9);
+        }
+        .hover-underline-animation {
+          position: relative;
+          color: rgb(255, 255, 255);
+          padding-bottom: 20px;
+          &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #fafafa;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+          }
+        }
+        &:hover .hover-underline-animation:after {
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
+      }
+    }
+  }
+  .productinfop {
+    color: white;
+    float: left;
+    margin-top: 30px;
+    font-size: 20px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .productinfo {
+    .productinfodiv {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      img {
+        border-radius: 25px;
+        margin-left: 0px;
+      }
+    }
+  }
+}

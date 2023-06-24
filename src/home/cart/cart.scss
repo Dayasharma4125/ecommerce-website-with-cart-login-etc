@@ -1,0 +1,113 @@
+.cartcontaner {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  border: 2px solid transparent;
+  color: white;
+  width: 80%;
+  margin: auto;
+  border-radius: 5px;
+  margin-top: 5px;
+  box-shadow: 0px 0px 1px 1px rgba(255, 255, 255, 0.5);
+  .producttitle {
+    // filter: drop-shadow(1px 1px 5px rgba(255, 255, 255, 0.445));
+    text-shadow: 1px 1px 1px rgba(44, 41, 41, 0.979);
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  img {
+    filter: drop-shadow(1px 1px 5px rgba(255, 255, 255, 0.5));
+    border-radius: 10px;
+    width: auto;
+    height: auto;
+    max-width: 150px;
+    max-height: 150px;
+    align-self: center;
+    margin: 10px;
+  }
+  .productprice {
+    font-size: 18px;
+    transform: translate(0%, -50%);
+    color: red;
+    margin-top: 2%;
+    text-align: center;
+  }
+  .delcbtn,
+  .delcbtn1 {
+    height: 30px;
+    width: 50px;
+    border: 2px solid transparent;
+    color: white;
+    font-family: 25px;
+    font-weight: 600;
+    font-size: 22px;
+    border: white 1px solid;
+    margin-left: 2px;
+  }
+  .delcbtn1 {
+    border: transparent;
+  }
+  .cartspn1 {
+    font-size: 22px;
+    margin-left: 2px;
+  }
+}
+
+.cta {
+  border: 1px solid transparent;
+  margin-top: 15px;
+  margin-bottom: 55px;
+  margin-left: 45%;
+  background: none;
+  color: antiquewhite;
+  span {
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    font-size: 14px;
+    padding-right: 15px;
+    text-transform: uppercase;
+  }
+  svg {
+    // filter: invert(10%);
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+  }
+  &:hover svg {
+    transform: translateX(0);
+  }
+  &:active svg {
+    transform: scale(0.9);
+  }
+  .hover-underline-animation {
+    position: relative;
+    color: rgb(255, 255, 255);
+    padding-bottom: 20px;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #fafafa;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+  }
+  &:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+
+@media (max-width: 500px) {
+  .cartcontaner {
+    flex-direction: column;
+  }
+  .cta {
+    margin-left: 35;
+  }
+}

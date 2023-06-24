@@ -1,0 +1,163 @@
+body {
+  scroll-behavior: smooth;
+  padding: 0px 0px ;
+  margin: 0px 0px;
+  .navhead {
+    min-width: 100%;
+    min-height: 7%;
+    font-size: 25px;
+    // position: sticky;
+    // top: 0;
+    background-color: black;
+    color: antiquewhite;
+    border: 2px red transparent;
+    .navhead2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0px;
+      padding: 5px;
+      z-index: 5;
+      padding: 0px ;
+      .navimg1{
+        display: none;
+      }
+      .navcont3 {
+        min-width: 40%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .navimg {
+          height: 40px;
+          width: 120px;
+          background-size: 100%;
+          margin: 0px 0px;
+        }
+
+        .navsearch {
+          outline: none;
+          border: none;
+          font-size: 20px;
+          color: white;
+          background-color: black;
+          border: 1px dotted rgb(92, 89, 89);
+          border-radius: 5px;
+          &::placeholder {
+            color: white;
+          }
+        }
+        .navcart{
+          sup{
+            color: white;
+            font-weight: 600;
+            border-radius: 80%;
+          }
+        }
+        .loginbtn {
+          width: 20%;
+          height: 100%;
+          border: 2px solid transparent;
+          border-radius: 5px;
+          background-color: salmon;
+          color: white;
+          font-size: 20px;
+          font-weight: 700;
+        }
+      }
+      #toptobtmbtn {
+        --offset: 50px;
+        color: white;
+        border: 2px solid transparent;
+        background-color: rgba(20, 20, 20, 0.5);
+        border-radius: 15px;
+        min-height: 5%;
+        min-width: 5%;
+        position: fixed;
+        transition: 0.5s ease;
+        bottom: 5%;
+        right: 5%;
+        visibility: hidden;
+        z-index: 10;
+        font-size: 22px;
+        font-weight: 700;
+      }
+      #navmenu {
+        // visibility: hidden;
+        display: none;
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .navhead {
+    margin-top: 0px;
+    padding: 0px;
+    .navhead2 {
+      flex-direction: column;
+      justify-content: space-between;
+      overflow-x: hidden;
+      // border: 5px solid white;
+      padding: 0px 0px;
+      align-items: center;
+      .navimg1{
+        display: block !important;
+        height: 40px;
+        width: 100px;
+        align-self: flex-start;
+        margin: 17px 0px 0px 15px;
+      }
+      #navmenu {
+        height: 50px;
+        width: 80px;
+        border: 2px solid transparent;
+        background-color: transparent;
+        color: white;
+        font-size: 22px;
+        z-index: 1155;
+        position: absolute;
+        top: 2%;
+        right: 5%;
+        display: block !important;
+      }
+      .navcont3 {
+        flex-direction: column;
+        transform: translate(0%, -160%);
+        justify-content: space-evenly;
+        visibility: hidden;
+        transition: all 0.3s linear;
+        opacity: 0;
+        height: 25vh;
+        height: 1vw;
+
+        .navimg{
+          display: none;
+        }
+        .navhome,
+        .navtrend,
+        .loginbtn,
+        .navcart {
+          margin: 20px;
+        }
+      }
+      .navcont3.open {
+        min-height: 25vh;
+        transform: translate(0%,0%);
+        transition: all 0.5s ease;
+        opacity: 1;
+        pointer-events: all;
+        visibility: visible;
+        height: 20vh;
+        .loginbtn{
+          width: 30%;
+        }
+        .navhome,
+        .navtrend,
+        .loginbtn,
+        .navcart {
+          margin: 20px;
+        }
+
+      }
+    }
+  }
+}
