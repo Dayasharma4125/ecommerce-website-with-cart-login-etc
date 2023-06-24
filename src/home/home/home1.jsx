@@ -27,7 +27,7 @@ const Home = () => {
                             <div className="producttitle" key={e.title}>{e.title}</div>
                             <img src={e.image} onClick={()=>{
                                 setstate1(e)
-                                navigate(`/product/${e.title}`)} 
+                                navigate(`/webapp1/product/${e.title}`)} 
                             }/>
                             <div className="productprice" key={e.price}>${e.price}</div>
                             <button className="addtocart" onClick={() => {

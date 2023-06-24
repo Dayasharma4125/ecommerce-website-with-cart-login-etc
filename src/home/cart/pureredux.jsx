@@ -57,7 +57,7 @@ function Pureredux() {
                         <h4 className="producttitle" key={k.name} >{k.name}</h4>
                         <img src={k.data.image} onClick={()=>{
                                 setstate1(k.data)
-                                navigate(`/product/${k.data.title}`)} 
+                                navigate(`/webapp1/product/${k.data.title}`)} 
                             } />
                         <h4 className="productprice" key={k.data.price}>${k.num * k.data.price}</h4>
                         <div>
