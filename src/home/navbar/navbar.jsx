@@ -7,19 +7,19 @@ const Navbar = () => {
   const navigate = useNavigate()
   const {state,dispach}=useContext(Dataf)
   function navhome() {
-    navigate("/")
+    navigate("/webapp1/")
     togglenavm();
   }
   function navtrend() {
-    navigate("/trend")
+    navigate("/webapp1/trend")
     togglenavm();
   }
   function navcart() {
-    navigate("/cart")
+    navigate("/webapp1/cart")
     togglenavm();
   }
   function navlogin() {
-    navigate("/login")
+    navigate("/webapp1/login")
     togglenavm();
   }
   window.onscroll = function () { toptobtmbtn() }
