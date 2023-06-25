@@ -3,6 +3,14 @@
   padding: 0px;
   background-color: rgb(17, 15, 15);
 }
+#preloader{
+  width: 100vw;
+  height: 100vh;
+  img{
+    width: 100vw;
+
+  }
+}
 ::-webkit-scrollbar {
   display: none;
 }

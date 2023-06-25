@@ -7,7 +7,7 @@ import { createContext, useReducer, useState } from 'react'
 import  Pureredux, { reducer } from './home/cart/pureredux'
 import Productinfo from './home/product info'
 import Login from './login/login'
-// import {Zoom} from 'react-preloaders';
+import { HelmetProvider } from 'react-helmet-async'
 
 const Dataf = createContext();
 const datainfo=createContext()
@@ -20,13 +20,14 @@ function App() {
       <Dataf.Provider value={{state, dispatch}}>
       <datainfo.Provider value={{state1,setstate1}}>
         <Navbar />
-        {/* <Zoom  background="110f0f" color={'rgb(250,250,250)'}/> */}
+        <HelmetProvider>
         <Routes>
           <Route path="/webapp1/" element={<><Home /> </>} ></Route>
           <Route path="/webapp1/cart" element={<><Pureredux /> </>} ></Route>
           <Route path="/webapp1/product/:id" element={<><Productinfo /> </>} ></Route>
           <Route path='/webapp1/login' element={<><Login/></>}></Route>
         </Routes>
+        </HelmetProvider>
       </datainfo.Provider>
       </Dataf.Provider>
     </BrowserRouter>
