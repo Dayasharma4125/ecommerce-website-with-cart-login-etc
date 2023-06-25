@@ -30,14 +30,19 @@
       //   text-shadow: 0px 0px 2px 5px rgba(255, 255, 255, 0.5);
       // }
       .prductinfodiv2price {
+        border: 2px double rgb(187, 185, 185);
+        padding: 10px;
+        width: 75%;
         font-size: 25px;
+        margin-bottom: 10px;
         color: whitesmoke;
-        margin-left: 12%;
+        // margin-left: 12%;
       }
       button {
-        border: 1px solid transparent;
+        border: 2px double rgb(187, 185, 185);
+        padding: 20px;
         margin-top: 25px;
-        margin-bottom: 55px;
+        // margin-bottom: 15px;
         background: none;
         width: 80%;
         color: antiquewhite;
@@ -105,6 +110,12 @@
       img {
         border-radius: 25px;
         margin-left: 0px;
+      }
+      .prductinfodiv2{
+        .prductinfodiv2price,button{
+          margin-left: 8%;
+          margin-top: 2%;
+        }
       }
     }
   }

@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { createContext, useReducer, useState } from 'react'
 import  Pureredux, { reducer } from './home/cart/pureredux'
 import Productinfo from './home/product info'
+import Login from './login/login'
 // import {Zoom} from 'react-preloaders';
 
 const Dataf = createContext();
@@ -24,6 +25,7 @@ function App() {
           <Route path="/webapp1/" element={<><Home /> </>} ></Route>
           <Route path="/webapp1/cart" element={<><Pureredux /> </>} ></Route>
           <Route path="/webapp1/product/:id" element={<><Productinfo /> </>} ></Route>
+          <Route path='/webapp1/login' element={<><Login/></>}></Route>
         </Routes>
       </datainfo.Provider>
       </Dataf.Provider>
