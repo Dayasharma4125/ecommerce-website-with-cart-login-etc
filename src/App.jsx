@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { createContext, useReducer, useState } from 'react'
 import  Pureredux, { reducer } from './home/cart/pureredux'
 import Productinfo from './home/product info'
-import {Zoom} from 'react-preloaders';
+// import {Zoom} from 'react-preloaders';
 
 const Dataf = createContext();
 const datainfo=createContext()
@@ -19,7 +19,7 @@ function App() {
       <Dataf.Provider value={{state, dispatch}}>
       <datainfo.Provider value={{state1,setstate1}}>
         <Navbar />
-        <Zoom  background="110f0f" color={'rgb(250,250,250)'}/>
+        {/* <Zoom  background="110f0f" color={'rgb(250,250,250)'}/> */}
         <Routes>
           <Route path="/webapp1/" element={<><Home /> </>} ></Route>
           <Route path="/webapp1/cart" element={<><Pureredux /> </>} ></Route>
