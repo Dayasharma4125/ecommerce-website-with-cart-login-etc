@@ -3,14 +3,15 @@ body {
   padding: 0px 0px ;
   margin: 0px 0px;
   .navhead {
-    min-width: 100%;
+    min-width: 95%;
     min-height: 7%;
     font-size: 25px;
     // position: sticky;
     // top: 0;
     background-color: black;
     color: antiquewhite;
-    border: 2px red transparent;
+    border: 5px double rgb(252, 252, 252) ;
+    border-radius: 5px;
     .navhead2 {
       display: flex;
       justify-content: space-between;
@@ -37,13 +38,19 @@ body {
         .navsearch {
           outline: none;
           border: none;
-          font-size: 20px;
-          color: white;
           background-color: black;
-          border: 1px dotted rgb(92, 89, 89);
+          border: 1px dotted rgb(157, 154, 154);
           border-radius: 5px;
-          &::placeholder {
+          input{
             color: white;
+            font-size: 20px;
+            border: none;
+            outline: none;
+            height: 100%;
+            width: 80%;
+            &::placeholder {
+              color: white;
+            }
           }
         }
         .navcart{
@@ -108,14 +115,14 @@ body {
       }
       #navmenu {
         height: 50px;
-        width: 80px;
+        width: 25%;
         border: 2px solid transparent;
         background-color: transparent;
         color: white;
         font-size: 22px;
         z-index: 1155;
         position: absolute;
-        top: 2%;
+        top: 1.2%;
         right: 5%;
         display: block !important;
       }
@@ -124,11 +131,11 @@ body {
         transform: translate(0%, -160%);
         justify-content: space-evenly;
         visibility: hidden;
-        transition: all 0.3s linear;
+        transition: all 0.3s ease-in-out;
         opacity: 0;
-        height: 25vh;
-        height: 1vw;
-
+        overflow: hidden;
+        height: 28vh;
+        height: 0.8vw;
         .navimg{
           display: none;
         }
@@ -136,7 +143,7 @@ body {
         .navtrend,
         .loginbtn,
         .navcart {
-          margin: 20px;
+          margin: 25px;
         }
       }
       .navcont3.open {
@@ -146,15 +153,25 @@ body {
         opacity: 1;
         pointer-events: all;
         visibility: visible;
-        height: 20vh;
+        max-height: 30vh;
         .loginbtn{
-          width: 30%;
+          width: 40%;
+          max-height: 20%;
         }
         .navhome,
         .navtrend,
         .loginbtn,
         .navcart {
           margin: 20px;
+        }
+        .navsearch{
+          input{
+            height: 90%;
+            width: 80%;
+          }
+        }
+        .navcart{
+          max-height:10% ;
         }
 
       }

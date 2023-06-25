@@ -59,7 +59,8 @@
   border: 1px solid transparent;
   margin-top: 15px;
   margin-bottom: 55px;
-  margin-left: 45%;
+  margin-left: 50%;
+  transform: translateX(-50%);
   background: none;
   color: antiquewhite;
   span {
@@ -108,6 +109,7 @@
     flex-direction: column;
   }
   .cta {
-    margin-left: 35;
+    // margin:;
+    transform: translateX(-35%);
   }
 }
