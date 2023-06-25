@@ -44,11 +44,13 @@ const Home = () => {
                             <img src={e.image} onClick={() => {
                                 setstate1(e)
                                 navigate(`/webapp1/product/${e.title}`)
+                                navigator.vibrate(50)
                             }
                             } />
                             <div className="productprice" key={e.price}><FontAwesomeIcon icon={faMoneyBill1}/> ${e.price}</div>
                             <button onClick={() => {
                                 dispatch({ type: ACTION.ADD, payload: { name: e.title, num: 1, data: e } })
+                                navigator.vibrate(50)
                             }} ><FontAwesomeIcon className="FontAwesomeIcon" icon={faCartArrowDown}  /> Add to cart</button>
                         </div></>
                     )
