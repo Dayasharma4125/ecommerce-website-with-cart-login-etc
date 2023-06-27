@@ -1,6 +1,7 @@
 // import { cno } from '../home/home';
 import { useContext } from 'react';
 import './navbar.scss'
+import logo from '../logo.png'
 import { useNavigate } from 'react-router-dom';
 import { Dataf } from '../../App';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -46,8 +47,8 @@ const Navbar = () => {
   return (
     <header className='navhead'>
       <nav className='navhead2'>
-        <img className='navimg1' src="https://www.pngmart.com/files/Amazon-Logo-Download-PNG-Image.png" alt="?" />
-        <div className='navcont3' id="navcont3"><img className='navimg' src="https://www.pngmart.com/files/Amazon-Logo-Download-PNG-Image.png" alt="?" />
+        <img className='navimg1' src={logo}/>
+        <div className='navcont3' id="navcont3"><img className='navimg' src={logo} />
           <div className='navhome' onClick={navhome} ><FontAwesomeIcon icon={faHome}/> Home</div>
           <div className='navtrend' onClick={navtrend} ><FontAwesomeIcon icon={faFire} color='red' /> Trending</div></div>
         <div className='navcont3' id="navcont4"><div className='navsearch'><FontAwesomeIcon icon={faSearch} width={'15%'} height={'50%'}/><input placeholder="Search" type='text' /></div>
