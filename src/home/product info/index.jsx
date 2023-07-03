@@ -28,7 +28,7 @@ const Productinfo = () => {
                             navigate("/webapp1/cart")
                         }}> ADD TO CART </span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" id="arrow-horizontal" ><path id="Path_10" d="M20 0H0v20h20zm-8.344 14.709-1.41-1.418L12.547 11H4V9h8.673l-2.38-2.379 1.414-1.414 4.737 4.736z" /></svg>
-                        </button>[]
+                        </button>
                         <button><span className="hover-underline-animation" onClick={() => {
                             navigate("/webapp1/cart")
                         }}> Shop now </span>

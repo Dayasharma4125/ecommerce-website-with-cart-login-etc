@@ -1,10 +1,9 @@
 * {
   margin: 0px;
   padding: 0px;
-  background-color: rgb(17, 15, 15);
 }
-#preloader{
-  img{
+#preloader {
+  img {
     margin-left: 2%;
     width: 95vw;
   }
@@ -18,19 +17,31 @@
   flex-wrap: wrap;
   justify-content: space-around;
   // align-items: center;
-  color: white;
+  color: rgb(0, 0, 0);
+  .hotdealssection {
+    text-align: center;
+    font-size: 25px;
+    color: rgb(54, 150, 118);
+    img {
+      height: 80%;
+      width: 90vw;
+      // margin-top: 15px;
+    }
+  }
   .contanerproduct {
     min-width: 10%;
     margin: 10px 20px;
-    padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     max-width: 20%;
     height: 300px;
-    border: 2px solid transparent;
-    filter: drop-shadow(1px 1px 5px rgba(255, 255, 255, 0.445));
-    // box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.45);
+    border: 1px solid #686767;
+    // filter: drop-shadow(1px 1px 5px rgba(255, 255, 255, 0.445));
+    box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.45);
     border-radius: 10px;
     position: relative;
     display: flex;
+    // padding:5px ;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
@@ -75,11 +86,11 @@
       box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
       transition: all 250ms;
       overflow: hidden;
-      .FontAwesomeIcon{
+      .FontAwesomeIcon {
         background-color: #e8e8e8;
       }
       &::before {
-        .FontAwesomeIcon{
+        .FontAwesomeIcon {
           background-color: #212121;
         }
         content: "";
@@ -97,15 +108,16 @@
       }
       &:hover {
         color: #e8e8e8;
-        .FontAwesomeIcon{
+        .FontAwesomeIcon {
           background-color: #212121;
         }
-      &::before {
-        width: 100%;
-        .FontAwesomeIcon{
-          background-color: #212121;
+        &::before {
+          width: 100%;
+          .FontAwesomeIcon {
+            background-color: #212121;
+          }
         }
-      }}
+      }
       // &::after{
       //   content: "In Cart";
       // }

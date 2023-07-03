@@ -49,46 +49,51 @@ function reducer(state, action) {
 
 function Pureredux() {
     let { state, dispatch } = useContext(Dataf)
-    const {state1,setstate1}=useContext(datainfo)
-    const navigate=useNavigate()
+    const { state1, setstate1 } = useContext(datainfo)
+    const navigate = useNavigate()
     return (
         <>
-        <Helmet>
-                        <title> Shop | Cart</title>
-                        <meta name="description" content="amazon 2.0 made by me full app single page application"/>
-                        <meta property="og:type" content="amazone store 2.0"/>
-                        <meta property="og:title" content="amazone store 2.0"/>
-                        <meta property="og:description" content="amazon 2.0 made by me full app single page application"/>
-                        <meta property="og:image" content="../pngwing.com.png"/>
-        </Helmet>
-        {
-            state.map(k => {
-                return (<>
-                    <div className='cartcontaner'>
-                        <h4 className="producttitle" key={k.name} >{k.name}</h4>
-                        <img src={k.data.image} onClick={()=>{
+            <Helmet>
+                <title> Shop | Cart</title>
+                <meta name="description" content="amazon 2.0 made by me full app single page application" />
+                <meta property="og:type" content="amazone store 2.0" />
+                <meta property="og:title" content="amazone store 2.0" />
+                <meta property="og:description" content="amazon 2.0 made by me full app single page application" />
+                <meta property="og:image" content="../pngwing.com.png" />
+            </Helmet>
+            
+            {
+                state.map(k => {
+                    return (<>
+                        <div className='cartcontaner'>
+                            <h4 className="producttitle" key={k.name} >{k.name}</h4>
+                            <img src={k.data.image} onClick={() => {
                                 setstate1(k.data)
                                 navigate(`/webapp1/product/${k.data.title}`)
-                                navigator.vibrate(100)} 
+                                navigator.vibrate(100)
+                            }
                             } />
-                        <h4 className="productprice" key={k.data.price}>${k.num * k.data.price}</h4>
-                        <div>
-                            <button className="delcbtn" onClick={() => { dispatch({ type: ACTION.INCREMENT, id: k.id, payload: { num: k.num, data: k.data, name: k.name } })  
-                                navigator.vibrate(50)
-                            }}>+</button>
-                            <button className="delcbtn" onClick={() => { dispatch({ type: ACTION.DECREMENT, id: k.id, payload: { num: k.num, data: k.data, name: k.name } })
-                                navigator.vibrate(50)
-                            }}>-</button>
-                            <span className="cartspn1" key={k.id}> {k.num} </span>
-                            <button className="delcbtn1" onClick={() => { dispatch({ type: ACTION.REMOVE, id: k.id, payload: { num: k.num, "data": k.data } })
-                                navigator.vibrate(50)
-                            }}>remove</button>
+                            <h4 className="productprice" key={k.data.price}>${k.num * k.data.price}</h4>
+                            <div>
+                                <button className="delcbtn" onClick={() => {
+                                    dispatch({ type: ACTION.INCREMENT, id: k.id, payload: { num: k.num, data: k.data, name: k.name } })
+                                    navigator.vibrate(50)
+                                }}>+</button>
+                                <button className="delcbtn" onClick={() => {
+                                    dispatch({ type: ACTION.DECREMENT, id: k.id, payload: { num: k.num, data: k.data, name: k.name } })
+                                    navigator.vibrate(50)
+                                }}>-</button>
+                                <span className="cartspn1" key={k.id}> {k.num} </span>
+                                <button className="delcbtn1" onClick={() => {
+                                    dispatch({ type: ACTION.REMOVE, id: k.id, payload: { num: k.num, "data": k.data } })
+                                    navigator.vibrate(50)
+                                }}>remove</button>
+                            </div>
                         </div>
-                    </div>
-                </>)
-            })}
+                    </>)
+                })}
             <button className='cta'><span className="hover-underline-animation"> Shop now </span>
-                <FontAwesomeIcon icon={faArrowRight}/></button>
+                <FontAwesomeIcon icon={faArrowRight} /></button>
         </>)
 }
 

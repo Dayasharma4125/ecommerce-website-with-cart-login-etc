@@ -2,6 +2,7 @@ body {
   scroll-behavior: smooth;
   padding: 0px 0px ;
   margin: 0px 0px;
+  // background-color: rgb(17, 15, 15);
   .navhead {
     min-width: 95%;
     min-height: 7%;
@@ -48,6 +49,7 @@ body {
             outline: none;
             height: 100%;
             width: 80%;
+            background-color: black;
             &::placeholder {
               color: white;
             }
@@ -131,7 +133,7 @@ body {
         transform: translate(0%, -160%);
         justify-content: space-evenly;
         visibility: hidden;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.1s ease-in-out;
         opacity: 0;
         overflow: hidden;
         height: 28vh;
@@ -149,7 +151,7 @@ body {
       .navcont3.open {
         min-height: 25vh;
         transform: translate(0%,0%);
-        transition: all 0.5s ease;
+        transition: all 0.3s ;
         opacity: 1;
         pointer-events: all;
         visibility: visible;
