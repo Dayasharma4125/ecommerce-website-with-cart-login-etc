@@ -11,14 +11,16 @@ import { HelmetProvider } from 'react-helmet-async'
 
 const Dataf = createContext();
 const datainfo=createContext()
-
+const tocken=createContext()
 function App() {
   const [state,dispatch]=useReducer(reducer,[])
   const [state1,setstate1]=useState([])
+  const [token,settocken]=useState("");
   return (
     <BrowserRouter>
       <Dataf.Provider value={{state, dispatch}}>
       <datainfo.Provider value={{state1,setstate1}}>
+      <tocken.Provider value={{token,settocken}}>
         <Navbar />
         <HelmetProvider>
         <Routes>
@@ -28,6 +30,7 @@ function App() {
           <Route path='/webapp1/login' element={<><Login/></>}></Route>
         </Routes>
         </HelmetProvider>
+        </tocken.Provider>
       </datainfo.Provider>
       </Dataf.Provider>
     </BrowserRouter>
@@ -35,4 +38,4 @@ function App() {
 }
 
 export default App
-export { Dataf ,datainfo}
+export { Dataf ,datainfo,tocken}

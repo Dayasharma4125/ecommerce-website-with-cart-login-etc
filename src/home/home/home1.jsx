@@ -10,6 +10,17 @@ import { Helmet } from "react-helmet-async";
 import TypewriterComponent from 'typewriter-effect';
 import { gsap } from "gsap";
 
+const isdarkmode = () => {
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme:dark)").matches) {
+        document.body.style.backgroundColor = "black";
+        document.body.style.color = "white";
+    }
+    else{
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+        return(<div></div>)
+    }
+}
 const Home = () => {
     const { state, dispatch } = useContext(Dataf)
     let [loading, setloading] = useState(true)
@@ -25,14 +36,9 @@ const Home = () => {
         fectdata();
     }, [])
     loading === true ? document.getElementById('preloader').style.display = "block" : document.getElementById('preloader').style.display = "none";
-    const isdarkmode = () => {
-        if (window.matchMedia && window.matchMedia("(prefers-color-scheme:dark)").matches) {
-            document.body.style.backgroundColor = "black";
-            document.body.style.color = "white";
-        }
-    }
+    // gsap.fromTo(".contanerproduct",{y:100,transition:1})
+    
     isdarkmode();
-    gsap.to(".contanerproduct",{y:-10})
     return (<>
         <Helmet>
             <title> Shop | Home</title>
@@ -51,10 +57,10 @@ const Home = () => {
                 .start();
         }}></TypewriterComponent >
         <div className="mainproducts">
-            <div className="hotdealssection">
+            {/* <div className="hotdealssection">
                 <h3>Hot deals</h3>
                 <img src="https://static.vecteezy.com/system/resources/previews/008/311/935/large_2x/the-illustration-graphic-consists-of-abstract-background-with-a-blue-gradient-dynamic-shapes-composition-eps10-perfect-for-presentation-background-website-landing-page-wallpaper-vector.jpg" alt="not avalable"></img>
-            </div>
+            </div> */}
             {
                 serverdata.map((e) => {
                     return (<>
@@ -78,3 +84,4 @@ const Home = () => {
 }
 
 export default Home;
+export {isdarkmode}

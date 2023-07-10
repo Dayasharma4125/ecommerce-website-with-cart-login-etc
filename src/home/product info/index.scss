@@ -1,7 +1,7 @@
 .productinfo {
   margin-top: 15px;
   .productinfotitle {
-    color: white;
+    // color: white;
     margin: 20px;
     text-align: center;
     font-size: 30px;
@@ -35,7 +35,7 @@
         width: 75%;
         font-size: 25px;
         margin-bottom: 10px;
-        color: whitesmoke;
+        // color: whitesmoke;
         // margin-left: 12%;
       }
       button {
@@ -45,7 +45,13 @@
         // margin-bottom: 15px;
         background: none;
         width: 80%;
-        color: antiquewhite;
+        @media (prefers-color-scheme: dark) {
+          color: white;
+        }
+        @media (prefers-color-scheme: light) {
+          color: rgb(0, 0, 0);
+        }
+        // color: antiquewhite;
         span {
           margin-top: 25px;
           padding-bottom: 7px;
@@ -55,21 +61,21 @@
           text-align: start;
           text-transform: uppercase;
         }
-        svg {
-          background-color: white;
+        FontAwesomeIcon {
+          // background-color: white;
           transform: translateX(-8px);
           transition: all 0.3s ease;
-          color: transparent;
+          // color: transparent;
         }
-        &:hover svg {
+        &:hover FontAwesomeIcon {
           transform: translateX(0);
         }
-        &:active svg {
+        &:active FontAwesomeIcon {
           transform: scale(0.9);
         }
         .hover-underline-animation {
           position: relative;
-          color: rgb(255, 255, 255);
+          // color: rgb(255, 255, 255);
           padding-bottom: 20px;
           &::after {
             content: "";
@@ -79,7 +85,7 @@
             height: 2px;
             bottom: 0;
             left: 0;
-            background-color: #fafafa;
+            // background-color: #fafafa;
             transform-origin: bottom right;
             transition: transform 0.25s ease-out;
           }
@@ -92,7 +98,7 @@
     }
   }
   .productinfop {
-    color: white;
+    // color: white;
     float: left;
     margin-top: 30px;
     font-size: 20px;
@@ -111,8 +117,9 @@
         border-radius: 25px;
         margin-left: 0px;
       }
-      .prductinfodiv2{
-        .prductinfodiv2price,button{
+      .prductinfodiv2 {
+        .prductinfodiv2price,
+        button {
           margin-left: 8%;
           margin-top: 2%;
         }

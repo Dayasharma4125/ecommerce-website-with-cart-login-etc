@@ -7,13 +7,18 @@ import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { Helmet } from 'react-helmet-async';
+import { tocken } from '../../App';
+import axios from 'axios';
+import { isdarkmode } from '../home/home1';
+
 
 let ACTION = {
     INCREMENT: "INCREMENT",
     DECREMENT: "DECREMENT",
     ADD: "ADD_TO_CART",
     REMOVE: "REMOVE_FORM_CART",
-    SETSTATE: "SET_STATE"
+    SETSTATE: "SET_STATE",
+    SERVER: "SET_SERVER"
 }
 function reducer(state, action) {
     let num;
@@ -44,6 +49,9 @@ function reducer(state, action) {
             return state.filter(e => e.id !== action.id)
         case ACTION.SETSTATE:
             return [state]
+        case ACTION.SERVER:
+            console.log(action.payload)
+            return [...state, action.payload]
     }
 }
 
@@ -51,6 +59,46 @@ function Pureredux() {
     let { state, dispatch } = useContext(Dataf)
     const { state1, setstate1 } = useContext(datainfo)
     const navigate = useNavigate()
+    isdarkmode();
+    const { token, settoken } = useContext(tocken)
+    const [cartserver, setcartserver] = useState([])
+    useEffect(() => {
+        const fectdata = async () => {
+            let data1 = await axios.get("/cart", {
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            // setcartserver(()=>data1.data);
+        }
+        fectdata();
+    }, [token])
+    // cartserver.forEach(e => {
+    //     dispatch({ type: ACTION.SERVER, id: e.id1, payload: { num: e.num, data: e, name: e.title } })
+    // })
+    // useEffect(() => {
+    //     state.map(e => {
+    //         axios.post("/cart", { title: e.name, image: e.data.image, description: e.data.description, price: e.data.price, num: e.num, id1: e.id }, {
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //                 Authorization: `Bearer ${token}`
+    //             }
+    //         }).then(res=>console.log(res.data))
+    //     })
+    // }, [])
+    // useEffect(() => {
+
+    // },[token])
+    function shopnow() {
+        if (!token) {
+            navigate("/webapp1/login/")
+        }
+        else if (token) {
+            navigate("/webapp1/purchase")
+        }
+
+    }
     return (
         <>
             <Helmet>
@@ -61,9 +109,10 @@ function Pureredux() {
                 <meta property="og:description" content="amazon 2.0 made by me full app single page application" />
                 <meta property="og:image" content="../pngwing.com.png" />
             </Helmet>
-            
+
             {
                 state.map(k => {
+                    console.log(k)
                     return (<>
                         <div className='cartcontaner'>
                             <h4 className="producttitle" key={k.name} >{k.name}</h4>
@@ -92,7 +141,7 @@ function Pureredux() {
                         </div>
                     </>)
                 })}
-            <button className='cta'><span className="hover-underline-animation"> Shop now </span>
+            <button className='cta' onClick={() => shopnow()}><span className="hover-underline-animation"> Shop now </span>
                 <FontAwesomeIcon icon={faArrowRight} /></button>
         </>)
 }

@@ -12,7 +12,7 @@
   align-items: center;
   flex-direction: row;
   border: 2px solid transparent;
-  color: white;
+  // color: white;
   width: 80%;
   margin: auto;
   border-radius: 5px;
@@ -47,16 +47,17 @@
     height: 30px;
     width: 50px;
     border: 2px solid transparent;
-    color: white;
-    background-color: black;
     font-family: 25px;
     font-weight: 600;
     font-size: 22px;
-    border: white 1px solid;
+    border: rgb(231, 229, 229) 1px solid;
     margin-left: 2px;
+    
   }
   .delcbtn1 {
     border: transparent;
+    width: 80px;
+    font-size: 20px;
   }
   .cartspn1 {
     font-size: 22px;
@@ -70,8 +71,14 @@
   margin-bottom: 55px;
   margin-left: 50%;
   transform: translateX(-50%);
-  background: none;
-  color: antiquewhite;
+  background: transparent;
+  @media (prefers-color-scheme:dark) {
+    color: white;
+  }
+  @media (prefers-color-scheme:light) {
+    color: rgb(0, 0, 0);
+  }
+  // color: antiquewhite;
   span {
     padding-bottom: 7px;
     letter-spacing: 4px;
@@ -92,7 +99,7 @@
   }
   .hover-underline-animation {
     position: relative;
-    color: rgb(255, 255, 255);
+    // color: rgb(255, 255, 255);
     padding-bottom: 20px;
     &::after {
       content: "";
@@ -102,7 +109,7 @@
       height: 2px;
       bottom: 0;
       left: 0;
-      background-color: #fafafa;
+      // background-color: #fafafa;
       transform-origin: bottom right;
       transition: transform 0.25s ease-out;
     }
