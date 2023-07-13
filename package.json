@@ -1,6 +1,6 @@
 {
   "name": "vite-project",
-  "proxy": "http://localhost:5001",
+  "proxy": "https://loginappbackend-hs2o.onrender.com",
   "homepage": "http://Dayasharma4125.github.io/webapp1/",
   "private": true,
   "version": "0.0.0",
