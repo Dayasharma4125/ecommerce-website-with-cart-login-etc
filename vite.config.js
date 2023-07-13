@@ -5,9 +5,9 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   server:{
     proxy:{
-      "/cart":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoiZGF5YSIsInBob25lbm8iOiJkYXlhIiwidXNlcmlkIjoiNjRhYTIzY2E5YzBiYTA4ZGU0ZDdkMTEyIn0sImlhdCI6MTY4OTIxMTkxNSwiZXhwIjoxNjkxMDExOTE1fQ.fkmqUjJd-Ir9qe-hO_rthpm0kchgkb2abhWEa1XTJ54",
-      "/login":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoiZGF5YSIsInBob25lbm8iOiJkYXlhIiwidXNlcmlkIjoiNjRhYTIzY2E5YzBiYTA4ZGU0ZDdkMTEyIn0sImlhdCI6MTY4OTIxMTkxNSwiZXhwIjoxNjkxMDExOTE1fQ.fkmqUjJd-Ir9qe-hO_rthpm0kchgkb2abhWEa1XTJ54",
-      "/register":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoiZGF5YSIsInBob25lbm8iOiJkYXlhIiwidXNlcmlkIjoiNjRhYTIzY2E5YzBiYTA4ZGU0ZDdkMTEyIn0sImlhdCI6MTY4OTIxMTkxNSwiZXhwIjoxNjkxMDExOTE1fQ.fkmqUjJd-Ir9qe-hO_rthpm0kchgkb2abhWEa1XTJ54"
+      "/cart":"https://loginappbackend-hs2o.onrender.com",
+      "/login":"https://loginappbackend-hs2o.onrender.com",
+      "/register":"https://loginappbackend-hs2o.onrender.com"
     }
   },
   base:"/webapp1/",
