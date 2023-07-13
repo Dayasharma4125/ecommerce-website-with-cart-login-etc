@@ -13,7 +13,7 @@ import { gsap } from "gsap";
 const isdarkmode = () => {
     if (window.matchMedia && window.matchMedia("(prefers-color-scheme:dark)").matches) {
         document.body.style.backgroundColor = "black";
-        document.body.style.color = "white";
+        document.body.style.color = "rgb(255,255,255)";
     }
     else{
         document.body.style.backgroundColor = "white";

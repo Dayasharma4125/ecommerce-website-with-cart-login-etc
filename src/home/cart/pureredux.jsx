@@ -112,7 +112,6 @@ function Pureredux() {
 
             {
                 state.map(k => {
-                    console.log(k)
                     return (<>
                         <div className='cartcontaner'>
                             <h4 className="producttitle" key={k.name} >{k.name}</h4>

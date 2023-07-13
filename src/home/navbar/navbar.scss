@@ -1,17 +1,18 @@
 body {
   scroll-behavior: smooth;
-  padding: 0px 0px ;
+  padding: 0px 0px;
   margin: 0px 0px;
   // background-color: rgb(17, 15, 15);
   .navhead {
     min-width: 95%;
     min-height: 7%;
-    font-size: 25px;
-    // position: sticky;
-    // top: 0;
-    background-color: black;
+    font-size: 2.5vw;
+    @media (min-width: 800px) {
+      font-size: 25px;
+    }
+    background-color: rgba(255, 255, 255, 0.1);
     color: antiquewhite;
-    border: 5px double rgb(252, 252, 252) ;
+    border: 5px double rgb(252, 252, 252);
     border-radius: 5px;
     .navhead2 {
       display: flex;
@@ -20,12 +21,12 @@ body {
       margin: 0px;
       padding: 5px;
       z-index: 5;
-      padding: 0px ;
-      .navimg1{
+      padding: 0px;
+      .navimg1 {
         display: none;
       }
       .navcont3 {
-        min-width: 50%;
+        min-width: 48%;
         margin-right: 0px;
         display: flex;
         justify-content: space-around;
@@ -43,21 +44,23 @@ body {
           background-color: black;
           border: 1px dotted rgb(157, 154, 154);
           border-radius: 5px;
-          input{
+          width: calc(45%);
+
+          input {
             color: white;
             font-size: 20px;
             border: none;
             outline: none;
             height: 100%;
             width: 80%;
-            background-color: black;
+            background-color: transparent;
             &::placeholder {
               color: white;
             }
           }
         }
-        .navcart{
-          sup{
+        .navcart {
+          sup {
             color: white;
             font-weight: 600;
             border-radius: 80%;
@@ -73,10 +76,10 @@ body {
           font-size: 20px;
           font-weight: 700;
         }
-        .loginimg{
+        .loginimg {
           display: none;
           border-radius: 50%;
-          max-height:45px;
+          max-height: 45px;
           max-width: 45px;
         }
       }
@@ -115,7 +118,7 @@ body {
       // border: 5px solid white;
       padding: 0px 0px;
       align-items: center;
-      .navimg1{
+      .navimg1 {
         display: block !important;
         height: 40px;
         width: 100px;
@@ -138,14 +141,15 @@ body {
       .navcont3 {
         flex-direction: column;
         transform: translate(0%, -160%);
+        // transition: all 0.6s ;
         justify-content: space-evenly;
         visibility: hidden;
-        transition: all 0.1s ease-in-out;
+        transition: all 0.8s ease-in-out;
         opacity: 0;
         overflow: hidden;
         height: 28vh;
         height: 0.8vw;
-        .navimg{
+        .navimg {
           display: none;
         }
         .navhome,
@@ -157,13 +161,14 @@ body {
       }
       .navcont3.open {
         min-height: 25vh;
-        transform: translate(0%,0%);
-        transition: all 0.3s ;
+        transform: translate(0%, 0%);
+        transition: all 0.5s ease-in-out ;
         opacity: 1;
         pointer-events: all;
         visibility: visible;
         max-height: 30vh;
-        .loginbtn{
+        font-size: 27px;
+        .loginbtn {
           width: 40%;
           max-height: 20%;
         }
@@ -173,16 +178,16 @@ body {
         .navcart {
           margin: 20px;
         }
-        .navsearch{
-          input{
+        .navsearch {
+          width: 70%;
+          input {
             height: 90%;
             width: 80%;
           }
         }
-        .navcart{
-          max-height:10% ;
+        .navcart {
+          max-height: 10%;
         }
-
       }
     }
   }
