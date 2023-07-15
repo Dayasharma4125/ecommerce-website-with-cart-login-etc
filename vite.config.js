@@ -16,6 +16,6 @@ export default defineConfig({
       }
     }
   },
-  base: "/webapp1/",
+  // base: "/webapp1/",
   plugins: [react()],
 })

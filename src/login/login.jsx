@@ -31,7 +31,7 @@ function Login() {
           }
         }).then(res => {
           settocken(()=>res.data.accsestoken)
-          navigat("/webapp1/")
+          navigat("/")
         })
     }
   }

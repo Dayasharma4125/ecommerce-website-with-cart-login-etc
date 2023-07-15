@@ -17,17 +17,17 @@ function App() {
   const [state1,setstate1]=useState([])
   const [token,settocken]=useState("");
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/webapp'>
       <Dataf.Provider value={{state, dispatch}}>
       <datainfo.Provider value={{state1,setstate1}}>
       <tocken.Provider value={{token,settocken}}>
         <Navbar />
         <HelmetProvider>
         <Routes>
-          <Route path="/webapp1/" element={<><Home /> </>} ></Route>
-          <Route path="/webapp1/cart" element={<><Pureredux /> </>} ></Route>
-          <Route path="/webapp1/product/:id" element={<><Productinfo /> </>} ></Route>
-          <Route path='/webapp1/login' element={<><Login/></>}></Route>
+          <Route path="/" element={<><Home /> </>} ></Route>
+          <Route path="/cart" element={<><Pureredux /> </>} ></Route>
+          <Route path="/product/:id" element={<><Productinfo /> </>} ></Route>
+          <Route path='/login' element={<><Login/></>}></Route>
         </Routes>
         </HelmetProvider>
         </tocken.Provider>

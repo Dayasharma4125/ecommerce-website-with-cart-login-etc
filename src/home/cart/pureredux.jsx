@@ -92,10 +92,10 @@ function Pureredux() {
     // },[token])
     function shopnow() {
         if (!token) {
-            navigate("/webapp1/login/")
+            navigate("/login/")
         }
         else if (token) {
-            navigate("/webapp1/purchase")
+            navigate("/purchase")
         }
 
     }
@@ -117,7 +117,7 @@ function Pureredux() {
                             <h4 className="producttitle" key={k.name} >{k.name}</h4>
                             <img src={k.data.image} onClick={() => {
                                 setstate1(k.data)
-                                navigate(`/webapp1/product/${k.data.title}`)
+                                navigate(`/product/${k.data.title}`)
                                 navigator.vibrate(100)
                             }
                             } />

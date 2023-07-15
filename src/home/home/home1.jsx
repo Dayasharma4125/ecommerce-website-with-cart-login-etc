@@ -68,7 +68,7 @@ const Home = () => {
                             <div className="producttitle" key={e.title}>{e.title}</div>
                             <img src={e.image} onClick={() => {
                                 setstate1(e)
-                                navigate(`/webapp1/product/${e.title}`)
+                                navigate(`/product/${e.title}`)
                                 navigator.vibrate(50)
                             }
                             } />
