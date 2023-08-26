@@ -2,42 +2,44 @@ import "./home.scss"
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { ACTION } from "../cart/pureredux";
-import { Dataf, datainfo } from "../../App";
-import { useNavigate } from "react-router-dom";
+import { Dataf, data, datainfo } from "../../App";
+import { Router, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartArrowDown, faMoneyBill1 } from "@fortawesome/free-solid-svg-icons";
 import { Helmet } from "react-helmet-async";
 import TypewriterComponent from 'typewriter-effect';
-import { gsap } from "gsap";
+import Productinfo from "../product info";
+import { Route } from "react-router-dom";
 
 const isdarkmode = () => {
     if (window.matchMedia && window.matchMedia("(prefers-color-scheme:dark)").matches) {
         document.body.style.backgroundColor = "black";
         document.body.style.color = "rgb(255,255,255)";
     }
-    else{
+    else {
         document.body.style.backgroundColor = "white";
         document.body.style.color = "black";
-        return(<div></div>)
+        return (<div></div>)
     }
 }
 const Home = () => {
+    const { serverdatan, setserverdatan } = useContext(data);
     const { state, dispatch } = useContext(Dataf)
-    let [loading, setloading] = useState(true)
+    // let [loading, setloading] = useState(true)
     const { state1, setstate1 } = useContext(datainfo)
-    const [serverdata, setserverdata] = useState([])
+    // const [serverdata, setserverdata] = useState([])
     const navigate = useNavigate();
     useEffect(() => {
         const fectdata = async () => {
             let data1 = await axios.get("https://fakestoreapi.com/products");
-            setserverdata(data1.data);
-            setloading(false)
+            // setserverdata(data1.data);
+            setserverdatan(data1.data)
         }
         fectdata();
     }, [])
-    loading === true ? document.getElementById('preloader').style.display = "block" : document.getElementById('preloader').style.display = "none";
+    // loading === true ? document.getElementById('preloader').style.display = "block" : document.getElementById('preloader').style.display = "none";
     // gsap.fromTo(".contanerproduct",{y:100,transition:1})
-    
+
     isdarkmode();
     return (<>
         <Helmet>
@@ -62,8 +64,9 @@ const Home = () => {
                 <img src="https://static.vecteezy.com/system/resources/previews/008/311/935/large_2x/the-illustration-graphic-consists-of-abstract-background-with-a-blue-gradient-dynamic-shapes-composition-eps10-perfect-for-presentation-background-website-landing-page-wallpaper-vector.jpg" alt="not avalable"></img>
             </div> */}
             {
-                serverdata.map((e) => {
+                serverdatan.map((e) => {
                     return (<>
+
                         <div className="contanerproduct">
                             <div className="producttitle" key={e.title}>{e.title}</div>
                             <img src={e.image} onClick={() => {
@@ -84,4 +87,4 @@ const Home = () => {
 }
 
 export default Home;
-export {isdarkmode}
+export { isdarkmode }

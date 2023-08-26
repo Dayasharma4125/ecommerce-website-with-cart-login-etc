@@ -2,13 +2,12 @@
   margin: 0px;
   padding: 0px;
 }
-#preloader {
-  img {
-    margin-left: 2%;
-    width: 95vw;
-    height: auto;
-  }
-}
+// body{
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   min-height: 100vh;
+// }
 ::-webkit-scrollbar {
   display: none;
 }
@@ -17,16 +16,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  // align-items: center;
-  // color: rgb(0, 0, 0);
   .hotdealssection {
     text-align: center;
     font-size: 25px;
-    // color: rgb(54, 150, 118);
     img {
       height: 80%;
       width: 90vw;
-      // margin-top: 15px;
     }
   }
   .contanerproduct {

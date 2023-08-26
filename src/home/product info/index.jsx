@@ -27,12 +27,12 @@ const Productinfo = () => {
                     <div>
                         <button><span className="hover-underline-animation" onClick={() => {
                             dispatch({ type: ACTION.ADD, payload: { name: state1.title, num: 1, data: state1 } })
-                            navigate("/webapp1/cart")
+                            navigate("/cart")
                         }}> ADD TO CART </span>
                             <FontAwesomeIcon icon={faArrowCircleRight} />
                         </button>
                         <button><span className="hover-underline-animation" onClick={() => {
-                            navigate("/webapp1/cart")
+                            navigate("/cart")
                         }}> Shop now </span>
                             <FontAwesomeIcon icon={faArrowCircleRight} />
                         </button>

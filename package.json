@@ -27,6 +27,7 @@
     "react-helmet-async": "^1.3.0",
     "react-preloaders": "^3.0.3",
     "react-router-dom": "^6.14.0",
+    "react-spinners": "^0.13.8",
     "typewriter-effect": "^2.20.1"
   },
   "devDependencies": {

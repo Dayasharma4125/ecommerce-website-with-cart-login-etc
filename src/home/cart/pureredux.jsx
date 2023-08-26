@@ -92,7 +92,7 @@ function Pureredux() {
     // },[token])
     function shopnow() {
         if (!token) {
-            navigate("/login/")
+            navigate("/webapp1/login/")
         }
         else if (token) {
             navigate("/purchase")
