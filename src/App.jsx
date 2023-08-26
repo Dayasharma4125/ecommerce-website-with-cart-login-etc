@@ -34,16 +34,16 @@ function App() {
   })
   return (
     <BrowserRouter>
-      <Suspense fallback={
+      <Suspense fallback={<div className='scaleloder'>
         <ScaleLoader
-          color="#dbe1ef"
+          color="#00ff00"
           cssOverride={{}}
           height={50}
           margin={5}
           radius={9}
           speedMultiplier={1}
           width={8}
-        />}>
+        /></div>}>
         <data.Provider value={{ serverdatan, setserverdatan }}>
           <Dataf.Provider value={{ state, dispatch }}>
             <datainfo.Provider value={{ state1, setstate1 }}>

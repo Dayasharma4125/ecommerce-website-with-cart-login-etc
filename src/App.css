@@ -1,0 +1,12 @@
+.scaleloder {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .scaleloder > * {
+  @media (prefers-color-scheme: light) {
+    color: black;
+  }
+} */

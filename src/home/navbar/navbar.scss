@@ -22,6 +22,10 @@ body {
       padding: 5px;
       z-index: 5;
       padding: 0px;
+      color: white;
+      @media (prefers-color-scheme:light) {
+        color: black;
+      }
       .navimg1 {
         display: none;
       }
@@ -88,7 +92,8 @@ body {
         color: white;
         border: 2px solid transparent;
         background-color: rgba(20, 20, 20, 0.5);
-        border-radius: 15px;
+        border-radius: 8px;
+        padding: 15px;
         min-height: 5%;
         min-width: 5%;
         position: fixed;
@@ -121,7 +126,7 @@ body {
       .navimg1 {
         display: block !important;
         height: 40px;
-        width: 100px;
+        width: 70px;
         align-self: flex-start;
         margin: 17px 0px 0px 15px;
       }
@@ -131,6 +136,9 @@ body {
         border: 2px solid transparent;
         background-color: transparent;
         color: white;
+        @media (prefers-color-scheme:light) {
+          color: black;
+        }
         font-size: 22px;
         z-index: 1155;
         position: absolute;

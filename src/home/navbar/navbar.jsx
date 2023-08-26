@@ -75,14 +75,15 @@ const Navbar = () => {
     document.getElementById('navcont4').classList.toggle('open')
   }
   function searchin(x) {
-    serverdatan.forEach(e => {
-      if (e.title.includes(x) == true) {
-        setserverdatan([e])
-      }
-      else {
-        setserverdatan([...serverdatan])
-      }
-    })
+    // serverdatan.forEach(e => {
+    //   if (e.title.includes(x) == true) {
+    //     serverdatan.reverse()
+    //     setserverdatan([...serverdatan,e])
+    //   }
+    //   else {
+    //     setserverdatan([...serverdatan])
+    //   }
+    // })
   }
   return (
     <header className='navhead'>
@@ -92,12 +93,12 @@ const Navbar = () => {
           <div className='navhome' onClick={navhome} ><FontAwesomeIcon icon={faHome} /> Home</div>
           <div className='navtrend' onClick={navtrend} ><FontAwesomeIcon icon={faFire} color='red' /> Trending</div></div>
         <div className='navcont3' id="navcont4">
-          <div className='navsearch'><FontAwesomeIcon icon={faSearch} width={'15%'} height={'50%'} /><input placeholder="Search" onChange={(e) => searchin(e.target.value)} type='text' /></div>
+          <div className='navsearch'><FontAwesomeIcon icon={faSearch} width={'15%'} height={'50%'} /><input placeholder="Search" id='navserch' onChange={(e) => searchin(e.target.value)} type='text' /></div>
           <div className='navcart' onClick={navcart} ><FontAwesomeIcon icon={faCartShopping} /> Cart<sup>{state.length}</sup></div>
           <button className='loginbtn' onClick={navlogin} >Login</button>
           <img className="loginimg" src='https://lh3.googleusercontent.com/ogw/AGvuzYYKs11_NuDypqfHRn3GJdUPRVhP2iGW3dSfV5lVhQ=s32-c-mo' onClick={() => { settocken(() => ""); alert("do you realy want to logout") }} alt='noimage' />
         </div>
-        <button id='toptobtmbtn' onClick={topFunction}   ><FontAwesomeIcon icon={faArrowUp} /> Top</button>
+        <button id='toptobtmbtn' onClick={topFunction}   ><FontAwesomeIcon icon={faArrowUp} /></button>
         <button id='navmenu' onClick={togglenavm}><FontAwesomeIcon icon={faBars} /> Menu </button>
         <span style={{ display: "none" }}>{isdarkmode}</span>
       </nav>
