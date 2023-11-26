@@ -8,12 +8,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp, faBars, faCartShopping, faFire, faHome, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { tocken } from '../../App';
 import { useState } from 'react';
+import axios from 'axios';
 const Navbar = () => {
   const navigate = useNavigate()
   const { token, settocken } = useContext(tocken)
   const { state, dispach } = useContext(Dataf)
+  const [serverdata, setserverdata] = useState([])
   const { serverdatan, setserverdatan } = useContext(data);
-  const [serdata, setserchdata] = useState([]);
   const isdarkmode = () => {
     if (window.matchMedia && window.matchMedia("(prefers-color-scheme:dark)").matches) {
       document.body.style.backgroundColor = "black";
@@ -22,9 +23,19 @@ const Navbar = () => {
     else {
       document.body.style.backgroundColor = "white";
       document.body.style.color = "black";
-      return (<><button className='darkmodebutton'></button></>)
+      // return (<><button className='darkmodebutton'></button></>)
     }
   }
+  useEffect(() => {
+    const fectdata = async () => {
+      let data1 = await axios.get("https://fakestoreapi.com/products");
+      setserverdata(data1.data);
+      setserverdatan(data1.data)
+    }
+    fectdata();
+    // setserverdatan(serverdata);
+  }, [])
+
   function navhome() {
     navigate("/")
     togglenavm();
@@ -74,16 +85,20 @@ const Navbar = () => {
     document.getElementById('navcont3').classList.toggle('open')
     document.getElementById('navcont4').classList.toggle('open')
   }
+  let z = []
   function searchin(x) {
-    // serverdatan.forEach(e => {
-    //   if (e.title.includes(x) == true) {
-    //     serverdatan.reverse()
-    //     setserverdatan([...serverdatan,e])
-    //   }
-    //   else {
-    //     setserverdatan([...serverdatan])
-    //   }
-    // })
+    if (x == "" | x == " " | x == null | x == undefined) {
+      setserverdatan(serverdata)
+    }
+    else {
+      z = serverdata.filter(e => {
+        if (e.title.toLowerCase().includes(x)||e.title.toUpperCase().includes(x)) {
+          return e;
+        }
+      })
+      setserverdatan(z);
+    }
+
   }
   return (
     <header className='navhead'>
